@@ -1,0 +1,11 @@
+syntax = "proto3";  //protocol buffers的版本
+package proto;
+option go_package = "/pb";   //输出的目标文件位置
+message CPU{
+  uint32 number_cores = 1;
+  uint32 number_threads = 2;
+  double max_hz_g = 3;
+}
+service HelloService {
+  rpc Hello (CPU) returns (CPU);
+}
